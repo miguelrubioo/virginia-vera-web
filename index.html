@@ -686,29 +686,33 @@
   <div class="container">
     <div class="gallery-header text-center fade-up">
       <span class="label">Resultados Reales</span>
-      <h2 class="section-title">Nuestra Galería de Trabajos</h2>
+      <h2 class="section-title">Nuestra Galería</h2>
       <p class="section-subtitle">Cada imagen cuenta la historia de una clienta que confió en nosotras. Todos los trabajos son reales, realizados en nuestro centro de Los Garres.</p>
     </div>
     <div class="gallery-placeholder">
       <div class="gallery-item fade-up">
-        <img src="virginia_micropigmentacion_1782922234840.png" alt="Micropigmentación de cejas - Virginia Vera Centro Estética Murcia" class="gallery-img" loading="lazy" />
-        <div class="gallery-overlay">Micropigmentación de Cejas</div>
+        <img src="gallery_tratamiento_fhos_01.jpeg" alt="Sesión de tratamiento con tecnología FHOS - Virginia Vera Centro Estética Murcia" class="gallery-img" loading="lazy" />
+        <div class="gallery-overlay">Tratamiento con Tecnología FHOS</div>
       </div>
       <div class="gallery-item fade-up">
-        <img src="virginia_tratamiento_facial_1782922222831.png" alt="Tratamiento facial profesional - Virginia Vera Estética Los Garres" class="gallery-img" loading="lazy" />
-        <div class="gallery-overlay">Tratamiento Facial Premium</div>
+        <img src="gallery_tratamiento_precision_02.jpeg" alt="Sesión de tratamiento de precisión en cabina - Virginia Vera Estética Los Garres" class="gallery-img" loading="lazy" />
+        <div class="gallery-overlay">Precisión en Cada Sesión</div>
       </div>
       <div class="gallery-item fade-up">
-        <img src="virginia_tratamiento_corporal_1782922259607.png" alt="Tratamiento corporal - Centro Estética Virginia Vera Murcia" class="gallery-img" loading="lazy" />
-        <div class="gallery-overlay">Tratamiento Corporal</div>
-      </div>
-      <div class="gallery-item fade-up">
-        <img src="virginia_aparatologia_1782922246821.png" alt="Aparatología premium - Virginia Vera Estética Murcia" class="gallery-img" loading="lazy" />
-        <div class="gallery-overlay">Aparatología Premium</div>
+        <img src="gallery_tratamiento_tecnologia_03.jpeg" alt="Tratamiento con tecnología de última generación - Centro Estética Virginia Vera Murcia" class="gallery-img" loading="lazy" />
+        <div class="gallery-overlay">Tecnología de Última Generación</div>
       </div>
       <div class="gallery-item fade-up">
         <img src="virginia_casmara_goya.jpg" alt="Virginia Vera Cosmética Oficial Premios Goya 2026" class="gallery-img" loading="lazy" />
         <div class="gallery-overlay">Casmara · Cosmética Oficial Goya 2026</div>
+      </div>
+      <div class="gallery-item fade-up">
+        <img src="gallery_formacion_casmara_04.jpeg" alt="Virginia Vera en el Casmara Beauty Congress 2026 - Formación continua" class="gallery-img" loading="lazy" />
+        <div class="gallery-overlay">Formación Continua · Casmara Beauty Congress 2026</div>
+      </div>
+      <div class="gallery-item fade-up">
+        <img src="gallery_showroom_productos_05.jpeg" alt="Selección de productos premium en Centro Estética Virginia Vera" class="gallery-img" loading="lazy" />
+        <div class="gallery-overlay">Nuestra Selección de Productos Premium</div>
       </div>
     </div>
     <div class="gallery-cta-row fade-up">
@@ -733,115 +737,23 @@
         Elige tu servicio, fecha y hora directamente desde nuestra agenda. Fácil, rápido y sin esperas.
       </p>
 
-      <button
-        id="open-fresha-btn"
-        onclick="document.getElementById('fresha-overlay').style.display='flex'"
-        style="
-          background: var(--gold);
-          color: #fff;
-          border: none;
-          padding: 20px 56px;
-          font-family: var(--font-serif);
-          font-size: 1.15rem;
-          font-weight: 600;
-          letter-spacing: 0.05em;
-          border-radius: 50px;
-          cursor: pointer;
-          box-shadow: 0 8px 36px rgba(212,175,110,0.45);
-          transition: transform 0.2s ease, box-shadow 0.2s ease;
-          display: inline-flex;
-          align-items: center;
-          gap: 12px;
-        "
-        onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 14px 44px rgba(212,175,110,0.6)'"
-        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 36px rgba(212,175,110,0.45)'"
-      >
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>
-        Reservar mi Cita Online
-      </button>
+      <!-- ── Widget de reservas embebido (sustituye a Fresha) ──
+           Config vía data-*: theming se toma automáticamente de la tabla
+           `businesses` en Supabase, pero puede forzarse aquí si hace falta. -->
+      <booking-widget
+        id="reservas-widget"
+        data-supabase-url="https://gpmvzsslezbuglhmrlkl.supabase.co"
+        data-supabase-anon-key="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdwbXZ6c3NsZXpidWdsaG1ybGtsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODMwOTIzNzMsImV4cCI6MjA5ODY2ODM3M30.oCQNLInGDf6YuhYjepaSZneHd2fcmRwH3GHUi97CDGY"
+        data-business="virginia-vera"
+      ></booking-widget>
 
       <p style="margin-top: 20px; font-size: 0.82rem; color: rgba(255,255,255,0.45); letter-spacing: 0.04em;">
-        Gestionado con Fresha &mdash; Confirmación inmediata
+        Confirmación inmediata por email &mdash; sin salir de esta página
       </p>
 
     </div>
   </div>
 </section>
-
-<!-- ══ MODAL FRESHA ══ -->
-<div id="fresha-overlay" style="
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.7);
-  z-index: 9999;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  backdrop-filter: blur(4px);
-">
-  <div style="
-    background: #fff;
-    border-radius: 16px;
-    width: 100%;
-    max-width: 900px;
-    max-height: 90vh;
-    overflow: hidden;
-    position: relative;
-    box-shadow: 0 25px 80px rgba(0,0,0,0.4);
-    display: flex;
-    flex-direction: column;
-  ">
-    <!-- Cabecera del modal -->
-    <div style="
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 16px 24px;
-      border-bottom: 1px solid #f0ebe3;
-      background: var(--surface);
-      flex-shrink: 0;
-    ">
-      <span style="font-family: var(--font-serif); color: var(--brown-dk); font-size: 1.1rem; font-weight: 600;">Reserva tu Cita — Virginia Vera</span>
-      <button 
-        onclick="document.getElementById('fresha-overlay').style.display='none'"
-        style="background: none; border: none; cursor: pointer; color: var(--text-light); font-size: 1.5rem; line-height: 1; padding: 4px 8px;"
-        aria-label="Cerrar"
-      >&times;</button>
-    </div>
-    <!-- Cuerpo: enlace directo a Fresha en nueva pestaña + instrucción -->
-    <div style="padding: 40px 32px; text-align: center; overflow-y: auto; flex-grow: 1;">
-      <svg viewBox="0 0 24 24" width="56" height="56" fill="var(--gold)" style="margin: 0 auto 20px; display: block;"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>
-      <h4 style="font-family: var(--font-serif); color: var(--brown-dk); font-size: 1.4rem; margin-bottom: 12px;">Agenda tu cita con Virginia</h4>
-      <p style="color: var(--text-light); font-size: 0.95rem; max-width: 420px; margin: 0 auto 32px; line-height: 1.7;">
-        Nuestro sistema de reservas te permite elegir servicio, fecha y hora en segundos. Se abrirá en una nueva pestaña para darte la mejor experiencia posible.
-      </p>
-      <a 
-        href="https://www.fresha.com/book-now/centro-estetica-virginia-vera-md848amz/all-offer?share=true&pId=3023893"
-        target="_blank"
-        rel="noopener"
-        onclick="setTimeout(function(){ document.getElementById('fresha-overlay').style.display='none'; }, 500)"
-        style="
-          display: inline-block;
-          background: var(--gold);
-          color: var(--surface);
-          text-decoration: none;
-          padding: 16px 44px;
-          font-family: var(--font-serif);
-          font-size: 1.05rem;
-          font-weight: 600;
-          letter-spacing: 0.05em;
-          border-radius: 50px;
-          box-shadow: 0 8px 30px rgba(181,142,91,0.4);
-          transition: transform 0.2s ease;
-        "
-      >
-        Abrir Agenda de Reservas
-      </a>
-      <p style="margin-top: 20px; font-size: 0.8rem; color: var(--text-light);">Se abrirá en una nueva pestaña &mdash; 100% seguro con Fresha</p>
-    </div>
-  </div>
-</div>
 
 <!-- ══ TESTIMONIOS ══ -->
 <section id="testimonios" class="section section--alt">
@@ -1115,9 +1027,12 @@
   });
 
   // ═══════════════════════════════════════════════
-  // WIDGET FRESHA - LÓGICA DE RESERVAS
+  // WIDGET DE RESERVAS PROPIO (sustituye a Fresha)
   // ═══════════════════════════════════════════════
-  // El código externo de Fresha gestionará automáticamente el calendario
+  // Se carga de forma diferida (defer) para no penalizar el LCP. El propio
+  // componente <booking-widget> retrasa además sus llamadas de red hasta que
+  // entra en el viewport (ver widget/src/widget.js -> IntersectionObserver).
 </script>
+<script src="booking-widget.js" defer></script>
 </body>
 </html>
