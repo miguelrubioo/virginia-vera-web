@@ -74,7 +74,7 @@
       {
         "@type": "Question",
         "name": "¿Necesito cita previa para venir al centro?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Sí, trabajamos con cita previa para garantizar una atención 100% personalizada y sin esperas. Puedes reservar tu cita de forma online a través de nuestra web, llamando al 968 87 93 73 o por WhatsApp." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Sí, trabajamos con cita previa para garantizar una atención 100% personalizada y sin esperas. Puedes pedir tu cita llamando al 968 87 93 73, por WhatsApp o por Instagram." }
       },
       {
         "@type": "Question",
@@ -277,6 +277,46 @@
     .service-card-link:hover { gap: 12px; color: var(--gold-dk); }
     .service-card-link::after { content: "→"; }
 
+    /* SERVICIOS — catálogo detallado */
+    .servicios-intro-box { display: flex; align-items: flex-start; gap: 18px; background: var(--white); border-radius: var(--radius-lg); box-shadow: 0 4px 24px var(--shadow); padding: 28px 32px; margin-bottom: 56px; }
+    .servicios-intro-icon { width: 48px; height: 48px; flex-shrink: 0; background: var(--champagne); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+    .servicios-intro-icon svg { width: 24px; height: 24px; fill: var(--gold); }
+    .servicios-intro-box h3 { font-family: var(--font-serif); font-size: 1.15rem; color: var(--brown-dk); margin-bottom: 6px; }
+    .servicios-intro-box p { font-size: 0.92rem; color: var(--text-mid); line-height: 1.65; margin: 0; }
+
+    .servicios-categoria { margin-top: 56px; }
+    .servicios-categoria:first-of-type { margin-top: 0; }
+    .servicios-cat-title { font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700; color: var(--brown-dk); margin-bottom: 28px; padding-bottom: 12px; border-bottom: 2px solid var(--border); }
+
+    .servicios-lista { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+    .servicio-item { background: var(--white); border-radius: var(--radius-md); padding: 24px; box-shadow: 0 3px 18px var(--shadow); transition: var(--transition); }
+    .servicio-item:hover { transform: translateY(-4px); box-shadow: 0 10px 30px var(--shadow-md); }
+    .servicio-item h4 { font-family: var(--font-serif); font-size: 1.08rem; font-weight: 700; color: var(--brown-dk); margin-bottom: 8px; line-height: 1.3; }
+    .servicio-item p { font-size: 0.87rem; color: var(--text-mid); line-height: 1.6; margin-bottom: 16px; }
+    .servicio-precio { display: inline-block; font-family: var(--font-sans); font-weight: 700; font-size: 0.88rem; color: var(--gold-dk); background: var(--champagne); padding: 5px 14px; border-radius: var(--radius-xl); }
+    .servicio-precio.consultar { color: var(--text-light); background: var(--cream); border: 1px dashed var(--nude); }
+    .servicio-nota { display: block; margin-top: 8px; font-size: 0.78rem; color: var(--text-light); font-style: italic; }
+    .servicio-img { width: 100%; height: 160px; object-fit: cover; border-radius: var(--radius-sm); margin-bottom: 14px; }
+
+    .marcas-box { background: var(--champagne); border-radius: var(--radius-lg); padding: 36px 32px; margin-top: 56px; display: flex; align-items: center; gap: 32px; text-align: left; }
+    .marcas-img { width: 220px; height: 220px; flex-shrink: 0; object-fit: cover; border-radius: var(--radius-md); box-shadow: 0 8px 24px var(--shadow-md); }
+    .marcas-box-text { text-align: center; }
+    .marcas-box h3 { font-family: var(--font-serif); font-size: 1.25rem; color: var(--brown-dk); margin-bottom: 12px; }
+    .marcas-box p { font-size: 0.92rem; color: var(--text-mid); line-height: 1.75; margin: 0 auto; }
+    .marcas-box strong { color: var(--brown-dk); }
+
+    @media (max-width: 720px) {
+      .marcas-box { flex-direction: column; text-align: center; }
+      .marcas-img { width: 100%; height: 200px; }
+    }
+
+    .servicios-cta-row { text-align: center; margin-top: 48px; }
+    .servicios-cta-row p { font-size: 0.95rem; color: var(--text-mid); margin-bottom: 18px; }
+
+    @media (max-width: 640px) {
+      .servicios-intro-box { flex-direction: column; }
+    }
+
     /* GALLERY */
     .gallery-header { margin-bottom: 48px; }
     .gallery-placeholder { column-count: 3; column-gap: 16px; }
@@ -477,7 +517,7 @@
       <li><a href="#testimonios">Opiniones</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
-    <a href="#citas" class="btn btn-primary nav-cta" id="nav-cta">Reservar Cita</a>
+    <a href="#citas" class="btn btn-primary nav-cta" id="nav-cta">Pedir Cita</a>
     <button class="hamburger" id="hamburger" aria-label="Abrir menú">
       <span></span><span></span><span></span>
     </button>
@@ -502,7 +542,7 @@
           en el corazón de Los Garres.
         </p>
         <div class="hero-ctas">
-          <a href="#citas" class="btn btn-primary">Reservar mi Cita</a>
+          <a href="#citas" class="btn btn-primary">Pedir Cita</a>
           <a href="https://wa.me/34664105592?text=Hola%2C%20me%20gustar%C3%ADa%20pedir%20m%C3%A1s%20informaci%C3%B3n" class="btn btn-white" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             WhatsApp
@@ -621,62 +661,171 @@
       <h2 class="section-title">Todo lo que tu piel necesita,<br />en un solo lugar</h2>
       <p class="section-subtitle">Tratamientos profesionales adaptados a cada tipo de piel y objetivo. Tecnología de vanguardia con el toque humano que nos distingue.</p>
     </div>
-    <div class="services-grid">
-      <article class="service-card fade-up">
-        <div class="service-card-img-wrapper">
-          <img src="facial_treatment_1782341869332.png" alt="Tratamientos faciales y corporales en Los Garres, Murcia" class="service-card-img" loading="lazy" />
-          <span class="service-tag">Más Solicitado</span>
+    <div class="servicios-intro-box fade-up">
+      <div class="servicios-intro-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+      </div>
+      <div>
+        <h3>Diagnóstico y Asesoramiento</h3>
+        <p>Análisis profundo de tu piel para diseñar un plan a medida. Sin protocolos genéricos: tu plan, tus objetivos, tus resultados. El punto de partida de cualquier tratamiento en Centro Estética Virginia Vera.</p>
+      </div>
+    </div>
+
+    <!-- Tratamientos Faciales -->
+    <div class="servicios-categoria fade-up">
+      <h3 class="servicios-cat-title">Tratamientos Faciales</h3>
+      <div class="servicios-lista">
+        <div class="servicio-item" itemscope itemtype="https://schema.org/Service">
+          <img src="facial-01-limpieza-acido.jpg" alt="Limpieza facial profunda con ácido en Centro Estética Virginia Vera, Los Garres" class="servicio-img" loading="lazy" itemprop="image" />
+          <h4 itemprop="name">Limpieza Facial Profunda con Ácido</h4>
+          <p itemprop="description">Limpieza facial en profundidad con exfoliación ácida controlada que elimina impurezas, células muertas y el exceso de sebo. Deja la piel visiblemente más luminosa, uniforme y suave desde la primera sesión.</p>
+          <span class="servicio-precio" itemprop="offers" itemscope itemtype="https://schema.org/Offer"><span itemprop="price" content="72">72 €</span><meta itemprop="priceCurrency" content="EUR" /></span>
         </div>
-        <div class="service-card-body">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 100 10A5 5 0 0012 2zm0 12c-5.33 0-8 2.67-8 4v2h16v-2c0-1.33-2.67-4-8-4z"/></svg>
-          </div>
-          <h3>Tratamientos Faciales y Corporales</h3>
-          <p>Limpieza facial profunda, hidratación, peeling, tratamientos reductores corporales y mucho más. Protocolos adaptados a tu piel para resultados visibles desde la primera sesión.</p>
-          <a href="#citas" class="service-card-link">Pedir cita</a>
+        <div class="servicio-item" itemscope itemtype="https://schema.org/Service">
+          <img src="facial-02-hydrafacial.jpg" alt="Tratamiento Hydrafacial en Centro Estética Virginia Vera, Murcia" class="servicio-img" loading="lazy" itemprop="image" />
+          <h4 itemprop="name">Hydrafacial</h4>
+          <p itemprop="description">Tratamiento facial de nueva generación que combina limpieza profunda, exfoliación e hidratación intensiva en un único protocolo indoloro y sin tiempo de recuperación. Resultados visibles nada más terminar la sesión.</p>
+          <span class="servicio-precio" itemprop="offers" itemscope itemtype="https://schema.org/Offer"><span itemprop="price" content="85">85 €</span><meta itemprop="priceCurrency" content="EUR" /></span>
+          <span class="servicio-nota">Modalidad Indipro / Ultra Deep</span>
         </div>
-      </article>
-      <article class="service-card fade-up">
-        <div class="service-card-img-wrapper">
-          <img src="aparatologia_corporal_1782341895416.png" alt="Aparatología premium estética en Murcia" class="service-card-img" loading="lazy" />
-          <span class="service-tag" style="background: var(--sage);">Premium</span>
+        <div class="servicio-item" itemscope itemtype="https://schema.org/Service">
+          <img src="facial-03-hidraderm-lifting.jpg" alt="Hidraderm lifting facial con cosmética Guinot en Los Garres, Murcia" class="servicio-img" loading="lazy" itemprop="image" />
+          <h4 itemprop="name">Hidraderm Lifting Facial</h4>
+          <p itemprop="description">Tratamiento facial de efecto lifting inmediato con tecnología y cosmética profesional Guinot. Firma, tensa y aporta luminosidad al rostro sin necesidad de intervenciones invasivas.</p>
+          <span class="servicio-precio">60 € – 90 €</span>
+          <span class="servicio-nota">Precio según protocolo elegido</span>
         </div>
-        <div class="service-card-body">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21H5.5l1-2.5C8 20 9.5 20.5 11 21c7 0 10-7 10-14-1.08.68-2.07 1.35-3 2-.88 1.33-1.5 2.75-1 2z"/></svg>
-          </div>
-          <h3>Aparatología Premium</h3>
-          <p>Equipos de última generación para tratamientos no invasivos: radiofrecuencia, cavitación, luz pulsada, presoterapia y más. Tecnología real, resultados reales.</p>
-          <a href="#citas" class="service-card-link">Pedir cita</a>
+        <div class="servicio-item" itemscope itemtype="https://schema.org/Service">
+          <img src="facial-04-dermapen-biopen.jpg" alt="Tratamiento de microagujas Dermapen en Centro Estética Virginia Vera" class="servicio-img" loading="lazy" itemprop="image" />
+          <h4 itemprop="name">Dermapen / Biopen (Microneedling Facial)</h4>
+          <p itemprop="description">Micropunción facial que estimula la renovación natural de la piel mediante microagujas de precisión. Mejora la textura, minimiza poros, cicatrices leves y líneas de expresión.</p>
+          <span class="servicio-precio">Desde 85 €</span>
+          <span class="servicio-nota">Dermapen 85 € · Biopen 100 €</span>
         </div>
-      </article>
-      <article class="service-card fade-up">
-        <div class="service-card-img-wrapper">
-          <img src="micropigmentacion_service_1782341879790.png" alt="Micropigmentación y maquillaje permanente en Murcia" class="service-card-img" loading="lazy" />
+        <div class="servicio-item" itemscope itemtype="https://schema.org/Service">
+          <img src="facial-05-vitamina-c.jpg" alt="Tratamiento facial con vitamina C en Los Garres, Murcia" class="servicio-img" loading="lazy" itemprop="image" />
+          <h4 itemprop="name">Tratamiento Facial con Vitamina C</h4>
+          <p itemprop="description">Tratamiento antioxidante que aporta luminosidad inmediata y ayuda a unificar el tono de la piel, combatiendo los signos del cansancio cutáneo y potenciando la producción de colágeno.</p>
+          <span class="servicio-precio" itemprop="offers" itemscope itemtype="https://schema.org/Offer"><span itemprop="price" content="70">70 €</span><meta itemprop="priceCurrency" content="EUR" /></span>
         </div>
-        <div class="service-card-body">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
-          </div>
-          <h3>Micropigmentación y Maquillaje</h3>
-          <p>Cejas, labios y eyeliner con técnicas de micropigmentación avanzada. Resultados naturales y duraderos. Diseño previo personalizado adaptado a tu fisionomía.</p>
-          <a href="#citas" class="service-card-link">Pedir cita</a>
+        <div class="servicio-item" itemscope itemtype="https://schema.org/Service">
+          <img src="facial-06-fhos.jpg" alt="Tratamiento facial FHOS bioluminiscente en Centro Estética Virginia Vera" class="servicio-img" loading="lazy" itemprop="image" />
+          <h4 itemprop="name">Tratamiento Facial FHOS</h4>
+          <p itemprop="description">Tecnología bioluminiscente que combina cosmética avanzada y energía lumínica para hidratar en profundidad, firmar y aportar luminosidad al rostro, sin agujas ni molestias.</p>
+          <span class="servicio-precio">70 € – 90 €</span>
         </div>
-      </article>
-      <article class="service-card fade-up">
-        <div class="service-card-img-wrapper">
-          <img src="diagnostico_piel_1782341906446.png" alt="Diagnóstico y asesoramiento de piel en Murcia" class="service-card-img" loading="lazy" />
-          <span class="service-tag" style="background: var(--brown);">Recomendado</span>
+      </div>
+    </div>
+
+    <!-- Tratamientos Corporales y Aparatología -->
+    <div class="servicios-categoria fade-up">
+      <h3 class="servicios-cat-title">Tratamientos Corporales y Aparatología</h3>
+      <div class="servicios-lista">
+        <div class="servicio-item" itemscope itemtype="https://schema.org/Service">
+          <img src="corporal-01-bell-action-duo.jpg" alt="Masaje Bell Action Dúo anticelulítico en Centro Estética Virginia Vera" class="servicio-img" loading="lazy" itemprop="image" />
+          <h4 itemprop="name">Bell Action Dúo</h4>
+          <p itemprop="description">Masaje mecánico de alta precisión que imita el movimiento profesional de las manos, actuando en profundidad sobre piel, tejido conectivo y muscular. Ideal para combatir la celulitis y esculpir la figura.</p>
+          <span class="servicio-precio" itemprop="offers" itemscope itemtype="https://schema.org/Offer"><span itemprop="price" content="60">60 €</span><meta itemprop="priceCurrency" content="EUR" /></span>
+          <span class="servicio-nota">Bono 6+1 sesiones: 360 €</span>
         </div>
-        <div class="service-card-body">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
-          </div>
-          <h3>Diagnóstico y Asesoramiento</h3>
-          <p>Análisis profundo de tu piel para diseñar un plan a medida. Sin protocolos genéricos: tu plan, tus objetivos, tus resultados. El punto de partida de cualquier tratamiento.</p>
-          <a href="#citas" class="service-card-link">Solicitar diagnóstico</a>
+        <div class="servicio-item" itemscope itemtype="https://schema.org/Service">
+          <img src="corporal-02-diatermia.jpg" alt="Diatermia corporal con radiofrecuencia en Los Garres, Murcia" class="servicio-img" loading="lazy" itemprop="image" />
+          <h4 itemprop="name">Diatermia Corporal</h4>
+          <p itemprop="description">Radiofrecuencia profesional que genera calor controlado en las capas profundas de la piel para mejorar la circulación, remodelar la silueta y combatir la celulitis, la flacidez y la grasa localizada.</p>
+          <span class="servicio-precio" itemprop="offers" itemscope itemtype="https://schema.org/Offer"><span itemprop="price" content="60">60 €</span><meta itemprop="priceCurrency" content="EUR" /></span>
+          <span class="servicio-nota">Precio por sesión</span>
         </div>
-      </article>
+        <div class="servicio-item" itemscope itemtype="https://schema.org/Service">
+          <img src="corporal-03-fhos.jpg" alt="Tratamiento corporal FHOS remodelante en Centro Estética Virginia Vera" class="servicio-img" loading="lazy" itemprop="image" />
+          <h4 itemprop="name">Tratamiento Corporal FHOS</h4>
+          <p itemprop="description">Protocolo corporal con tecnología bioluminiscente que firma la piel, reduce la piel de naranja, remodela la silueta y favorece la eliminación de líquidos, con resultados visibles y sin molestias.</p>
+          <span class="servicio-precio">70 € – 90 €</span>
+        </div>
+        <div class="servicio-item" itemscope itemtype="https://schema.org/Service">
+          <img src="corporal-04-presoterapia.jpg" alt="Presoterapia y drenaje linfático en Centro Estética Virginia Vera, Murcia" class="servicio-img" loading="lazy" itemprop="image" />
+          <h4 itemprop="name">Presoterapia</h4>
+          <p itemprop="description">Terapia de compresión con aire que estimula el drenaje linfático y el retorno venoso, ideal para aliviar la sensación de piernas cansadas y reducir la retención de líquidos.</p>
+          <span class="servicio-precio" itemprop="offers" itemscope itemtype="https://schema.org/Offer"><span itemprop="price" content="15">15 €</span><meta itemprop="priceCurrency" content="EUR" /></span>
+          <span class="servicio-nota">Bono 10 sesiones: 12 €/sesión</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Láser Azul -->
+    <div class="servicios-categoria fade-up">
+      <h3 class="servicios-cat-title">Láser Azul</h3>
+      <div class="servicios-lista">
+        <div class="servicio-item" itemscope itemtype="https://schema.org/Service">
+          <img src="laser-01-laser-azul.jpg" alt="Tratamiento con láser azul para acné en Centro Estética Virginia Vera" class="servicio-img" loading="lazy" itemprop="image" />
+          <h4 itemprop="name">Tratamiento con Láser Azul</h4>
+          <p itemprop="description">Tratamiento no invasivo e indoloro que emite una luz específica con acción bactericida, especialmente indicado para pieles con tendencia acneica o con imperfecciones, sin dañar la piel de alrededor.</p>
+          <span class="servicio-precio consultar">Consultar precio</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Micropigmentación y Maquillaje -->
+    <div class="servicios-categoria fade-up">
+      <h3 class="servicios-cat-title">Micropigmentación y Maquillaje</h3>
+      <div class="servicios-lista">
+        <div class="servicio-item" itemscope itemtype="https://schema.org/Service">
+          <img src="micropigmentacion-01-cejas-labios-eyeliner.jpg" alt="Micropigmentación de cejas en Centro Estética Virginia Vera, Los Garres" class="servicio-img" loading="lazy" itemprop="image" />
+          <h4 itemprop="name">Cejas, Labios y Eyeliner</h4>
+          <p itemprop="description">Técnicas de micropigmentación avanzada con resultados naturales y duraderos. Diseño previo personalizado adaptado a tu fisionomía.</p>
+          <span class="servicio-precio consultar">Consultar precio</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Manicura y Pedicura -->
+    <div class="servicios-categoria fade-up">
+      <h3 class="servicios-cat-title">Manicura y Pedicura</h3>
+      <div class="servicios-lista">
+        <div class="servicio-item" itemscope itemtype="https://schema.org/Service">
+          <img src="manicura-pedicura-01-manicura.jpg" alt="Manicura profesional en Centro Estética Virginia Vera, Murcia" class="servicio-img" loading="lazy" itemprop="image" />
+          <h4 itemprop="name">Manicura</h4>
+          <p itemprop="description">Cuidado completo de manos y uñas con limado, cutículas y acabado profesional para unas manos cuidadas y con un resultado impecable.</p>
+          <span class="servicio-precio consultar">Consultar precio</span>
+        </div>
+        <div class="servicio-item" itemscope itemtype="https://schema.org/Service">
+          <img src="manicura-pedicura-02-pedicura.jpg" alt="Pedicura profesional en Centro Estética Virginia Vera, Murcia" class="servicio-img" loading="lazy" itemprop="image" />
+          <h4 itemprop="name">Pedicura</h4>
+          <p itemprop="description">Tratamiento completo para pies con exfoliación, cuidado de cutículas y esmaltado, dejando los pies sanos, suaves y perfectos para cualquier época del año.</p>
+          <span class="servicio-precio consultar">Consultar precio</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cejas -->
+    <div class="servicios-categoria fade-up">
+      <h3 class="servicios-cat-title">Cejas</h3>
+      <div class="servicios-lista">
+        <div class="servicio-item" itemscope itemtype="https://schema.org/Service">
+          <img src="cejas-01-laminado.jpg" alt="Laminado de cejas en Centro Estética Virginia Vera, Los Garres" class="servicio-img" loading="lazy" itemprop="image" />
+          <h4 itemprop="name">Laminado de Cejas</h4>
+          <p itemprop="description">Técnica que peina y fija el vello de las cejas hacia arriba y en una misma dirección, logrando un efecto de cejas más pobladas, ordenadas y definidas de forma totalmente natural.</p>
+          <span class="servicio-precio consultar">Consultar precio</span>
+        </div>
+        <div class="servicio-item" itemscope itemtype="https://schema.org/Service">
+          <img src="cejas-02-lifting-tinte.jpg" alt="Lifting y tinte de cejas en Centro Estética Virginia Vera, Murcia" class="servicio-img" loading="lazy" itemprop="image" />
+          <h4 itemprop="name">Lifting de Cejas + Tinte</h4>
+          <p itemprop="description">Combinación de laminado y tinte de cejas para lograr unas cejas perfectamente peinadas, con más color y densidad visual, ideal para looks definidos sin necesidad de maquillaje diario.</p>
+          <span class="servicio-precio" itemprop="offers" itemscope itemtype="https://schema.org/Offer"><span itemprop="price" content="45">45 €</span><meta itemprop="priceCurrency" content="EUR" /></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="marcas-box fade-up">
+      <img src="marcas-01-cosmetica-profesional.jpg" alt="Cosmética profesional Guinot, Casmara, Skeyndor en Centro Estética Virginia Vera" class="marcas-img" loading="lazy" />
+      <div class="marcas-box-text">
+        <h3>Cosmética Profesional de Primer Nivel</h3>
+        <p>En Centro de Estética Virginia Vera trabajamos exclusivamente con cosmética profesional de las firmas de mayor prestigio del sector: <strong>Guinot</strong>, <strong>Casmara</strong> (cosmética oficial de los Premios Goya 2026), <strong>Germaine de Capuccini</strong>, <strong>Skeyndor</strong>, <strong>Fhos</strong>, <strong>Artdeco</strong>, <strong>Nee Milano</strong> y la línea de nutricosmética <strong>Chic and Love</strong>. Seleccionamos cada marca por su eficacia clínicamente probada y sus resultados visibles desde las primeras sesiones.</p>
+      </div>
+    </div>
+
+    <div class="servicios-cta-row fade-up">
+      <p>¿Tienes dudas sobre qué tratamiento es mejor para ti?</p>
+      <a href="#citas" class="btn btn-primary">Contactar y Pedir Cita</a>
     </div>
   </div>
 </section>
@@ -729,26 +878,31 @@
   <div class="container">
     <div style="text-align: center; max-width: 600px; margin: 0 auto;">
 
-      <span class="label" style="color: var(--gold);">Reserva Tu Cita</span>
+      <span class="label" style="color: var(--gold);">Pide Tu Cita</span>
       <h2 style="font-family: var(--font-serif); font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: var(--white); line-height: 1.2; margin: 16px 0 20px;">
-        Tu cita online,<br /><em style="color: var(--gold); font-style: italic;">en segundos</em>
+        Reserva tu cita<br /><em style="color: var(--gold); font-style: italic;">en un momento</em>
       </h2>
-      <p style="color: rgba(255,255,255,0.75); font-size: 1.05rem; line-height: 1.75; margin-bottom: 48px;">
-        Elige tu servicio, fecha y hora directamente desde nuestra agenda. Fácil, rápido y sin esperas.
+      <p style="color: rgba(255,255,255,0.75); font-size: 1.05rem; line-height: 1.75; margin-bottom: 40px;">
+        Llámanos, escríbenos por WhatsApp o mándanos un mensaje directo a Instagram. Te responderemos lo antes posible para confirmar tu cita.
       </p>
 
-      <!-- ── Widget de reservas embebido (sustituye a Fresha) ──
-           Config vía data-*: theming se toma automáticamente de la tabla
-           `businesses` en Supabase, pero puede forzarse aquí si hace falta. -->
-      <booking-widget
-        id="reservas-widget"
-        data-supabase-url="https://gpmvzsslezbuglhmrlkl.supabase.co"
-        data-supabase-anon-key="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdwbXZ6c3NsZXpidWdsaG1ybGtsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODMwOTIzNzMsImV4cCI6MjA5ODY2ODM3M30.oCQNLInGDf6YuhYjepaSZneHd2fcmRwH3GHUi97CDGY"
-        data-business="virginia-vera"
-      ></booking-widget>
+      <div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin-bottom: 28px;">
+        <a href="tel:+34968879373" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          Llamar · 968 87 93 73
+        </a>
+        <a href="https://wa.me/34664105592?text=Hola%2C%20me%20gustar%C3%ADa%20pedir%20una%20cita" class="btn btn-white" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp
+        </a>
+        <a href="https://www.instagram.com/virginiavera_estetica/" class="btn btn-white" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          Instagram DM
+        </a>
+      </div>
 
-      <p style="margin-top: 20px; font-size: 0.82rem; color: rgba(255,255,255,0.45); letter-spacing: 0.04em;">
-        Confirmación inmediata por email &mdash; sin salir de esta página
+      <p style="margin-top: 12px; font-size: 0.82rem; color: rgba(255,255,255,0.45); letter-spacing: 0.04em;">
+        Horario de atención: Lunes a Jueves 9:30–13:30 y 16:00–21:00 · Viernes 9:30–20:00
       </p>
 
     </div>
@@ -968,7 +1122,7 @@
           <li><a href="#nosotras">Sobre Nosotras</a></li>
           <li><a href="#galeria">Galería</a></li>
           <li><a href="#testimonios">Opiniones</a></li>
-          <li><a href="#citas">Reservar Cita</a></li>
+          <li><a href="#citas">Pedir Cita</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
       </div>
@@ -1026,13 +1180,7 @@
     });
   });
 
-  // ═══════════════════════════════════════════════
-  // WIDGET DE RESERVAS PROPIO (sustituye a Fresha)
-  // ═══════════════════════════════════════════════
-  // Se carga de forma diferida (defer) para no penalizar el LCP. El propio
-  // componente <booking-widget> retrasa además sus llamadas de red hasta que
-  // entra en el viewport (ver widget/src/widget.js -> IntersectionObserver).
+
 </script>
-<script src="booking-widget.js" defer></script>
 </body>
 </html>
